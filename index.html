@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,6 +161,7 @@ footer strong{color:var(--gold)}
 </head>
 
 <body>
+
 <header>
   <div class="sun-mark" aria-hidden="true">☀</div>
   <h1>LIGHT OF THE SUN</h1>
@@ -170,40 +170,51 @@ footer strong{color:var(--gold)}
 </header>
 
 <main>
+
   <section class="planet-wrap" aria-label="Interactive Earth">
     <div id="globe-container"></div>
   </section>
+
   <p class="globe-hint">
     Drag to rotate the Earth · Scroll to zoom · Click a golden marker to visit a country community
   </p>
 
   <section id="countries">
+
     <h2 class="section-title">Explore Our Countries</h2>
+
     <p class="section-subtitle">
       Choose a country to visit its Light of the Sun community on Facebook.
     </p>
+
     <div class="search-area">
       <input id="countrySearch" type="search"
         placeholder="Search for a country..."
         aria-label="Search countries">
       <p class="count" id="countryCount" aria-live="polite"></p>
     </div>
+
     <div class="country-grid" id="countryGrid"></div>
+
     <p class="no-results" id="noResults">
       No countries found. Try another search.
     </p>
+
   </section>
 
   <section class="info-section" id="our-community">
+
     <h2 class="section-title">Discover More of Our Community</h2>
+
     <p class="section-subtitle">
       Join us in making the world a kinder place for people and animals.
     </p>
 
     <div class="info-grid">
+
       <a class="info-card"
-        href="https://www.facebook.com/groups/charityforanimals/"
-        target="_blank" rel="noopener noreferrer">
+         href="https://www.facebook.com/groups/charityforanimals/"
+         target="_blank" rel="noopener noreferrer">
         <div class="info-icon" aria-hidden="true">🐾</div>
         <h3>Charity for Animals</h3>
         <p>Help animals, share kindness and support a community that cares for every living creature.</p>
@@ -211,8 +222,8 @@ footer strong{color:var(--gold)}
       </a>
 
       <a class="info-card"
-        href="https://www.facebook.com/groups/extremesun/"
-        target="_blank" rel="noopener noreferrer">
+         href="https://www.facebook.com/groups/extremesun/"
+         target="_blank" rel="noopener noreferrer">
         <div class="info-icon" aria-hidden="true">🏔️</div>
         <h3>Extreme Sports</h3>
         <p>Connect with adventure lovers, discover exciting activities and celebrate an active spirit.</p>
@@ -220,15 +231,17 @@ footer strong{color:var(--gold)}
       </a>
 
       <a class="info-card"
-        href="https://svetotsolnca.tilda.ws/charity"
-        target="_blank" rel="noopener noreferrer">
+         href="https://svetotsolnca.tilda.ws/charity"
+         target="_blank" rel="noopener noreferrer">
         <div class="info-icon" aria-hidden="true">☀️</div>
         <h3>Light of the Sun — Official Website</h3>
         <p>Discover our main project and learn more about our mission of kindness and mutual support.</p>
         <span class="visit">VISIT OUR WEBSITE ↗</span>
       </a>
+
     </div>
   </section>
+
 </main>
 
 <footer>
@@ -238,129 +251,271 @@ footer strong{color:var(--gold)}
 </footer>
 
 <script>
-const countries = [
-  ["Afghanistan","https://www.facebook.com/groups/afghanistansun/"],
-  ["Albania","https://www.facebook.com/groups/albaniasun/"],
-  ["Algeria","https://www.facebook.com/groups/algeriasun/"],
-  ["Andorra","https://www.facebook.com/groups/andorrasun/"],
-  ["Angola","https://www.facebook.com/groups/angolasun/"],
-  ["Antigua and Barbuda","https://www.facebook.com/groups/antiguaandbarbudasun/"],
-  ["Argentina","https://www.facebook.com/groups/argentinasun/"],
-  ["Armenia","https://www.facebook.com/groups/armeniasun/"],
-  ["Australia","https://www.facebook.com/groups/australiasun/"],
-  ["Austria","https://www.facebook.com/groups/austriasun/"],
-  ["Azerbaijan","https://www.facebook.com/groups/azerbaijansun/"],
-  ["Bahamas","https://www.facebook.com/groups/baahaamassun/"],
-  ["Bahrain","https://www.facebook.com/groups/bahrainsun/"],
-  ["Bangladesh","https://www.facebook.com/groups/bangladeshsun/"],
-  ["Barbados","https://www.facebook.com/groups/barbadossun/"],
-  ["Belarus","https://www.facebook.com/groups/belarussun/"],
-  ["Belgium","https://www.facebook.com/groups/belgiumsun/"],
-  ["Belize","https://www.facebook.com/groups/belizesun/"],
-  ["Benin","https://www.facebook.com/groups/beninsun/"],
-  ["Bhutan","https://www.facebook.com/groups/bhutansun/"],
-  ["Bolivia","https://www.facebook.com/groups/boliviasun/"],
-  ["Bosnia and Herzegovina","https://www.facebook.com/groups/bosniaandherzegovinasun/"],
-  ["Botswana","https://www.facebook.com/groups/botswanasun/"],
-  ["Brazil","https://www.facebook.com/groups/brazilsun/"],
-  ["Brunei","https://www.facebook.com/groups/bruneisun/"],
-  ["Bulgaria","https://www.facebook.com/groups/bulgariasun/"],
-  ["Burkina Faso","https://www.facebook.com/groups/burkinafasosun/"],
-  ["Burundi","https://www.facebook.com/groups/burundisun/"],
-  ["Cabo Verde","https://www.facebook.com/groups/caboverdesun/"],
-  ["Cambodia","https://www.facebook.com/groups/cambodiasun/"],
-  ["Cameroon","https://www.facebook.com/groups/cameroonsun/"],
-  ["Canada","https://www.facebook.com/groups/canadasun/"],
-  ["Central African Republic","https://www.facebook.com/groups/centralafricanrepublicsun/"],
-  ["Chad","https://www.facebook.com/groups/chadsun/"],
-  ["Chile","https://www.facebook.com/groups/chilesun/"],
-  ["China","https://www.facebook.com/groups/sunchina/"],
-  ["Colombia","https://www.facebook.com/groups/colombiasun/"],
-  ["Comoros","https://www.facebook.com/groups/comorossun/"],
-  ["Costa Rica","https://www.facebook.com/groups/costaricasun/"],
-  ["Côte d’Ivoire","https://www.facebook.com/groups/cotedivoiresun/"],
-  ["Croatia","https://www.facebook.com/groups/croatiasun/"],
-  ["Cuba","https://www.facebook.com/groups/cubasun/"],
-  ["Cyprus","https://www.facebook.com/groups/suncyprus/"],
-  ["Czechia","https://www.facebook.com/groups/czechiasun/"],
-  ["Congo","https://www.facebook.com/groups/congosun/"],
-  ["Democratic Republic of the Congo","https://www.facebook.com/groups/drcongosun/"],
-  ["Denmark","https://www.facebook.com/groups/denmarksun/"],
-  ["Djibouti","https://www.facebook.com/groups/djiboutisun/"],
-  ["Dominica","https://www.facebook.com/groups/dominicasun/"],
-  ["Dominican Republic","https://www.facebook.com/groups/sundominicanrepublic/"]
-];
 
-const countryLocations = {
-  "Afghanistan":[33.9,67.7],
-  "Albania":[41.2,20.2],
-  "Algeria":[28,1.7],
-  "Andorra":[42.5,1.5],
-  "Angola":[-11.2,17.9],
-  "Antigua and Barbuda":[17.1,-61.8],
-  "Argentina":[-38.4,-63.6],
-  "Armenia":[40.1,45],
-  "Australia":[-25.3,133.8],
-  "Austria":[47.5,14.6],
-  "Azerbaijan":[40.1,47.6],
-  "Bahamas":[25,-77.4],
-  "Bahrain":[26,50.6],
-  "Bangladesh":[23.7,90.4],
-  "Barbados":[13.2,-59.5],
-  "Belarus":[53.7,27.9],
-  "Belgium":[50.5,4.5],
-  "Belize":[17.2,-88.5],
-  "Benin":[9.3,2.3],
-  "Bhutan":[27.5,90.4],
-  "Bolivia":[-16.3,-63.6],
-  "Bosnia and Herzegovina":[43.9,17.7],
-  "Botswana":[-22.3,24.7],
-  "Brazil":[-10.8,-52.9],
-  "Brunei":[4.5,114.7],
-  "Bulgaria":[42.7,25.5],
-  "Burkina Faso":[12.2,-1.6],
-  "Burundi":[-3.4,29.9],
-  "Cabo Verde":[15.1,-23.6],
-  "Cambodia":[12.6,104.9],
-  "Cameroon":[5.9,12.4],
-  "Canada":[56.1,-106.3],
-  "Central African Republic":[6.6,20.9],
-  "Chad":[15.5,18.7],
-  "Chile":[-35.7,-71.5],
-  "China":[35.9,104.2],
-  "Colombia":[4.6,-74.1],
-  "Comoros":[-11.9,43.9],
-  "Costa Rica":[9.7,-83.8],
-  "Côte d’Ivoire":[7.5,-5.5],
-  "Croatia":[45.1,15.2],
-  "Cuba":[21.5,-77.8],
-  "Cyprus":[35.1,33.4],
-  "Czechia":[49.8,15.5],
-  "Congo":[-0.7,15.8],
-  "Democratic Republic of the Congo":[-4,21.8],
-  "Denmark":[56.3,9.5],
-  "Djibouti":[11.8,42.6],
-  "Dominica":[15.4,-61.4],
-  "Dominican Republic":[18.7,-70.2]
+// Country name | ISO code | Facebook group | Latitude | Longitude
+
+const countryData = `
+Afghanistan|AF|afghanistansun|33.9|67.7
+Albania|AL|albaniasun|41.2|20.2
+Algeria|DZ|algeriasun|28|1.7
+Andorra|AD|andorrasun|42.5|1.5
+Angola|AO|angolasun|-11.2|17.9
+Antigua and Barbuda|AG|antiguaandbarbudasun|17.1|-61.8
+Argentina|AR|argentinasun|-38.4|-63.6
+Armenia|AM|armeniasun|40.1|45
+Australia|AU|australiasun|-25.3|133.8
+Austria|AT|austriasun|47.5|14.6
+Azerbaijan|AZ|azerbaijansun|40.1|47.6
+Bahamas|BS|baahaamassun|25|-77.4
+Bahrain|BH|bahrainsun|26|50.6
+Bangladesh|BD|bangladeshsun|23.7|90.4
+Barbados|BB|barbadossun|13.2|-59.5
+Belarus|BY|belarussun|53.7|27.9
+Belgium|BE|belgiumsun|50.5|4.5
+Belize|BZ|belizesun|17.2|-88.5
+Benin|BJ|beninsun|9.3|2.3
+Bhutan|BT|bhutansun|27.5|90.4
+Bolivia|BO|boliviasun|-16.3|-63.6
+Bosnia and Herzegovina|BA|bosniaandherzegovinasun|43.9|17.7
+Botswana|BW|botswanasun|-22.3|24.7
+Brazil|BR|brazilsun|-10.8|-52.9
+Brunei|BN|bruneisun|4.5|114.7
+Bulgaria|BG|bulgariasun|42.7|25.5
+Burkina Faso|BF|burkinafasosun|12.2|-1.6
+Burundi|BI|burundisun|-3.4|29.9
+Cabo Verde|CV|caboverdesun|15.1|-23.6
+Cambodia|KH|cambodiasun|12.6|104.9
+Cameroon|CM|cameroonsun|5.9|12.4
+Canada|CA|canadasun|56.1|-106.3
+Central African Republic|CF|centralafricanrepublicsun|6.6|20.9
+Chad|TD|chadsun|15.5|18.7
+Chile|CL|chilesun|-35.7|-71.5
+China|CN|sunchina|35.9|104.2
+Colombia|CO|colombiasun|4.6|-74.1
+Comoros|KM|comorossun|-11.7|43.3
+Congo|CG|congosun|-0.7|15.8
+Costa Rica|CR|costaricasun|9.7|-83.8
+Côte d’Ivoire|CI|cotedivoiresun|7.5|-5.5
+Croatia|HR|croatiasun|45.1|15.2
+Cuba|CU|cubasun|21.5|-77.8
+Cyprus|CY|suncyprus|35.1|33.4
+Czechia|CZ|czechiasun|49.8|15.5
+Democratic Republic of the Congo|CD|drcongosun|-4|21.8
+Denmark|DK|denmarksun|56.3|9.5
+Djibouti|DJ|djiboutisun|11.8|42.6
+Dominica|DM|dominicasun|15.4|-61.4
+Dominican Republic|DO|sundominicanrepublic|18.7|-70.2
+Ecuador|EC|ecuadorsun|-1.8|-78.2
+Egypt|EG|egyptsunlight|26.8|30.8
+El Salvador|SV|elsalvadorsun|13.8|-88.9
+Equatorial Guinea|GQ|equatorialguineasun|1.6|10.5
+Eritrea|ER|eritreasun|15.2|39
+Estonia|EE|estoniasun|58.6|25
+Eswatini|SZ|eswatinisun|-26.5|31.5
+Ethiopia|ET|ethiopiasun|9.1|40.5
+Fiji|FJ|sunfiji|-17.8|178.1
+Finland|FI|finlandsun|61.9|25.7
+France|FR|francesunlight|46.6|2.5
+Gabon|GA|gabonsun|-0.6|11.6
+Gambia|GM|gambiasun|13.4|-15.3
+Georgia|GE|georgiasun|42.2|43.5
+Germany|DE|germanysun|51.2|10.4
+Ghana|GH|ghanasun|7.9|-1
+Greece|GR|greecesun|39.1|22
+Grenada|GD|grenadasun|12.1|-61.7
+Guatemala|GT|guatemalasun|15.6|-90.2
+Guinea|GN|guineasun|10.4|-10.7
+Guinea-Bissau|GW|guineabissausun|12|-14.8
+Guyana|GY|guyanasun|4.9|-58.9
+Haiti|HT|haitisun|19|-72.4
+Holy See|VA|holyseesun|41.9029|12.4534
+Honduras|HN|hondurassun|14.8|-86.3
+Hungary|HU|hungarysun|47.2|19.5
+Iceland|IS|icelandsun|64.9|-18.6
+India|IN|indiasun|22.5|79
+Indonesia|ID|indonesiasun|-2.5|118
+Iran|IR|iransun|32.4|53.7
+Iraq|IQ|iraqsunlight|33.2|43.7
+Ireland|IE|irelandsun|53.4|-8
+Israel|IL|israelsun|31.1|34.9
+Italy|IT|italysun|42.8|12.8
+Jamaica|JM|jamaicasunlight|18.1|-77.3
+Japan|JP|japansunlight|36.2|138.3
+Jordan|JO|jordansunlight|31.2|36.5
+Kazakhstan|KZ|kazakhstansun|48|66.9
+Kenya|KE|kenyasun|0.2|37.9
+Kiribati|KI|kiribatisun|1.45|173
+Kuwait|KW|kuwaitsun|29.3|47.5
+Kyrgyzstan|KG|kyrgyzstansun|41.2|74.8
+Laos|LA|laossun|19.9|102.6
+Latvia|LV|latviasun|56.9|24.6
+Lebanon|LB|lebanonsun|33.9|35.8
+Lesotho|LS|lesothosun|-29.6|28.2
+Liberia|LR|liberiasun|6.4|-9.4
+Libya|LY|libyasun|26.3|17.2
+Liechtenstein|LI|liechtensteinsun|47.16|9.55
+Lithuania|LT|lithuaniasun|55.2|23.9
+Luxembourg|LU|luxembourgsun|49.8|6.1
+Madagascar|MG|madagascarsun|-19|46.9
+Malawi|MW|malawisun|-13.3|34
+Malaysia|MY|malaysiasun|4.2|102
+Maldives|MV|maldivessun|3.2|73.2
+Mali|ML|malisun|17.6|-4
+Malta|MT|maltasun|35.9|14.4
+Marshall Islands|MH|marshallislandssun|7.1|171.2
+Mauritania|MR|mauritaniasun|20.3|-10
+Mauritius|MU|mauritiussun|-20.2|57.5
+Mexico|MX|mexicosun|23.6|-102.5
+Micronesia|FM|micronesiasun|6.9|158.2
+Moldova|MD|moldovasun|47.2|28.5
+Monaco|MC|monacosun|43.7384|7.4246
+Mongolia|MN|mongoliasun|46.9|103.8
+Montenegro|ME|montenegrosun|42.7|19.3
+Morocco|MA|moroccosun|31.8|-6.1
+Mozambique|MZ|mozambiquesun|-18.7|35.5
+Myanmar|MM|myanmarsun|21.9|95.9
+Namibia|NA|namibiasun|-22.1|17.1
+Nauru|NR|naurusun|-0.53|166.93
+Nepal|NP|nepalsun|28.4|84.1
+Netherlands|NL|netherlandssun|52.2|5.4
+New Zealand|NZ|newzealandsun|-41|174
+Nicaragua|NI|nicaraguasun|12.9|-85.2
+Niger|NE|nigersun|17.6|8.1
+Nigeria|NG|nigeriasun|9.1|8.7
+North Korea|KP|northkoreasun|40.3|127.5
+North Macedonia|MK|northmacedoniasun|41.6|21.7
+Norway|NO|norwaysun|64.5|14
+Oman|OM|omansun|21.5|56
+Pakistan|PK|pakistansun|30.4|69.3
+Palau|PW|palausun|7.5|134.5
+Panama|PA|panamasun|8.5|-80
+Papua New Guinea|PG|papuanewguineasun|-6.3|145
+Paraguay|PY|paraguaysun|-23.4|-58.4
+Peru|PE|perusun|-9.2|-75
+Philippines|PH|philippinessun|12.8|122
+Poland|PL|polandsun|52.1|19.4
+Portugal|PT|portugalsun|39.6|-8
+Qatar|QA|qatarsun|25.3|51.2
+Romania|RO|romaniasun|45.9|24.9
+Russia|RU|russiasun|61|96
+Rwanda|RW|rwandasun|-1.9|29.9
+Saint Kitts and Nevis|KN|saintkittsandnevissun|17.3|-62.7
+Saint Lucia|LC|saintluciasun|13.9|-61
+Saint Vincent and the Grenadines|VC|saintvincentandthegrenadinessun|13.2|-61.2
+Samoa|WS|samoasun|-13.8|-172.1
+San Marino|SM|sanmarinosun|43.94|12.46
+Sao Tome and Principe|ST|saotomeandprincipesun|0.25|6.6
+Saudi Arabia|SA|saudiarabiasun|24|45
+Senegal|SN|senegalsun|14.5|-14.4
+Serbia|RS|serbiasun|44|20.8
+Seychelles|SC|seychellessun|-4.6|55.45
+Sierra Leone|SL|sierraleonesun|8.5|-11.8
+Singapore|SG|singaporesun|1.35|103.82
+Slovakia|SK|slovakiasun|48.7|19.5
+Slovenia|SI|sloveniasun|46.1|14.8
+Solomon Islands|SB|solomonislandssun|-9.6|160.1
+Somalia|SO|somaliasun|5.2|46.2
+South Africa|ZA|southafricasun|-29|25
+South Korea|KR|southkoreasun|36.5|127.9
+South Sudan|SS|southsudansun|7.9|30
+Spain|ES|spainsun|40.4|-3.7
+Sri Lanka|LK|srilankasun|7.8|80.7
+State of Palestine|PS|stateofpalestinesun|31.9|35.2
+Sudan|SD|sudansun|15.8|30.2
+Suriname|SR|surinamesun|4.1|-56
+Sweden|SE|swedensun|62|15
+Switzerland|CH|switzerlandsun|46.8|8.2
+Syria|SY|syriasun|35|38
+Tajikistan|TJ|tajikistansun|38.9|71
+Tanzania|TZ|tanzaniasun|-6.3|34.9
+Thailand|TH|thailandsun|15.5|101
+Timor-Leste|TL|timorlestesun|-8.9|125.7
+Togo|TG|togosun|8.6|1
+Tonga|TO|tongasun|-21.1|-175.2
+Trinidad and Tobago|TT|trinidadandtobagosun|10.5|-61.3
+Tunisia|TN|tunisiasun|34|9
+Türkiye|TR|turkiyesun|39|35
+Turkmenistan|TM|turkmenistansun|39.1|59.4
+Tuvalu|TV|tuvalusun|-8.5|179.2
+Uganda|UG|ugandasun|1.3|32.3
+Ukraine|UA|ukrainesun|49|31.3
+United Arab Emirates|AE|unitedarabemiratessun|24|54
+United Kingdom|GB|unitedkingdomsun|54|-2.5
+United States|US|usasun|39.8|-98.6
+Uruguay|UY|uruguaysun|-32.5|-55.8
+Uzbekistan|UZ|uzbekistansun|41.4|64.6
+Vanuatu|VU|vanuatusun|-17.7|168.3
+Venezuela|VE|venezuelasun|7|-66
+Vietnam|VN|vietnamsun|16|107.8
+Yemen|YE|yemensun|15.5|48.5
+Zambia|ZM|zambiasun|-13.1|27.8
+Zimbabwe|ZW|zimbabwesun|-19|29.2
+`;
+
+const aliases = {
+  CG: "Republic of the Congo Congo Brazzaville",
+  CD: "DR Congo DRC Congo Kinshasa",
+  NE: "Nigerien Community",
+  NG: "Nigerian Community",
+  VA: "Vatican Vatican City",
+  US: "USA America",
+  GB: "UK Great Britain",
+  TR: "Turkey Turkiye",
+  CZ: "Czech Republic",
+  CV: "Cape Verde",
+  CI: "Ivory Coast",
+  PS: "Palestine",
+  MM: "Burma",
+  KR: "Republic of Korea",
+  KP: "DPRK",
+  FM: "Federated States of Micronesia"
 };
+
+const countries = countryData.trim().split(/\r?\n/)
+  .map(line => {
+    const [name,code,group,lat,lng] = line.split("|");
+
+    return {
+      name,
+      code,
+      url:"https://www.facebook.com/groups/" + group + "/",
+      lat:Number(lat),
+      lng:Number(lng),
+      aliases:aliases[code] || ""
+    };
+  })
+  .sort((a,b) => a.name.localeCompare(b.name,"en"));
 
 const grid = document.getElementById("countryGrid");
 const search = document.getElementById("countrySearch");
 const count = document.getElementById("countryCount");
 const noResults = document.getElementById("noResults");
 
+function normalizeText(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .toLocaleLowerCase()
+    .trim();
+}
+
 function renderCountries() {
-  const term = search.value.trim().toLocaleLowerCase();
-  const filtered = countries.filter(([name]) =>
-    name.toLocaleLowerCase().includes(term)
+
+  const term = normalizeText(search.value);
+
+  const filtered = countries.filter(country =>
+    normalizeText(country.name + " " + country.aliases)
+      .includes(term) ||
+    country.code.toLowerCase() === term
   );
 
   grid.replaceChildren();
 
-  filtered.forEach(([name,url]) => {
+  filtered.forEach(country => {
+
     const link = document.createElement("a");
     link.className = "country-card";
-    link.href = url;
+    link.href = country.url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
 
@@ -369,9 +524,10 @@ function renderCountries() {
     pin.setAttribute("aria-hidden","true");
 
     const content = document.createElement("span");
+
     const title = document.createElement("span");
     title.className = "country-name";
-    title.textContent = name;
+    title.textContent = country.name;
 
     const note = document.createElement("div");
     note.className = "card-note";
@@ -380,85 +536,125 @@ function renderCountries() {
     content.append(title,note);
     link.append(pin,content);
     grid.append(link);
+
   });
 
   count.textContent =
     `Showing ${filtered.length} of ${countries.length} country communities`;
-  noResults.style.display = filtered.length ? "none" : "block";
+
+  noResults.style.display =
+    filtered.length ? "none" : "block";
 }
 
 search.addEventListener("input",renderCountries);
+
 document.getElementById("footerYear").textContent =
   new Date().getFullYear();
+
 renderCountries();
 
 function initializeGlobe() {
+
   const container = document.getElementById("globe-container");
 
-  if (typeof Globe === "undefined") {
+  function showGlobeError() {
     container.innerHTML =
-      '<p style="text-align:center;color:#ffd76a;padding:40px 15px">The 3D globe could not load. Please check your internet connection and refresh the page.</p>';
+      '<p style="text-align:center;color:#ffd76a;padding:40px 15px">The 3D globe could not load. You can still explore all country communities using the list below.</p>';
+  }
+
+  if (typeof Globe === "undefined") {
+    showGlobeError();
     return;
   }
 
-  const markerData = countries
-    .filter(([name]) => countryLocations[name])
-    .map(([name,url]) => ({
-      name,
-      url,
-      lat:countryLocations[name][0],
-      lng:countryLocations[name][1]
-    }));
+  try {
 
-  const globe = Globe()(container)
-    .backgroundColor("rgba(0,0,0,0)")
-    .globeImageUrl(
-      "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-    )
-    .bumpImageUrl(
-      "https://unpkg.com/three-globe/example/img/earth-topology.png"
-    )
-    .showAtmosphere(true)
-    .atmosphereColor("#65cfff")
-    .atmosphereAltitude(0.18)
-    .pointsData(markerData)
-    .pointLat("lat")
-    .pointLng("lng")
-    .pointColor(() => "#ffd76a")
-    .pointAltitude(0.015)
-    .pointRadius(0.45)
-    .pointLabel(point => `
-      <div style="color:#10213b;background:#fff4d1;padding:9px 12px;border-radius:8px;font-family:Arial,sans-serif">
-        <strong>${point.name}</strong><br>
-        <span>Click to visit Facebook community</span>
-      </div>
-    `)
-    .onPointClick(point => {
-      window.open(point.url,"_blank","noopener,noreferrer");
+    const markerData = countries.filter(country =>
+      Number.isFinite(country.lat) &&
+      Number.isFinite(country.lng)
+    );
+
+    const globe = new Globe(container)
+      .backgroundColor("rgba(0,0,0,0)")
+      .globeImageUrl(
+        "https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+      )
+      .bumpImageUrl(
+        "https://unpkg.com/three-globe/example/img/earth-topology.png"
+      )
+      .showAtmosphere(true)
+      .atmosphereColor("#65cfff")
+      .atmosphereAltitude(0.18)
+      .pointsData(markerData)
+      .pointLat("lat")
+      .pointLng("lng")
+      .pointColor(() => "#ffd76a")
+      .pointAltitude(0.015)
+      .pointRadius(0.38)
+      .pointsMerge(false)
+      .pointLabel(point => `
+        <div style="color:#10213b;background:#fff4d1;padding:9px 12px;border-radius:8px;font-family:Arial,sans-serif">
+          <strong>${point.name}</strong><br>
+          <span>Click to visit Facebook community</span>
+        </div>
+      `)
+      .onPointClick(point => {
+        window.open(
+          point.url,
+          "_blank",
+          "noopener,noreferrer"
+        );
+      })
+      .onPointHover(point => {
+        container.style.cursor = point ? "pointer" : "grab";
+      });
+
+    function resizeGlobe() {
+      globe.width(container.clientWidth);
+      globe.height(container.clientHeight);
+    }
+
+    resizeGlobe();
+
+    globe.pointOfView({
+      lat:20,
+      lng:10,
+      altitude:2.3
+    },0);
+
+    const controls = globe.controls();
+
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.45;
+    controls.enableZoom = true;
+
+    container.addEventListener("mouseenter",() => {
+      controls.autoRotate = false;
     });
 
-  function resizeGlobe() {
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-    globe.width(width);
-    globe.height(height);
+    container.addEventListener("mouseleave",() => {
+      controls.autoRotate = true;
+    });
+
+    window.addEventListener("resize",resizeGlobe);
+
+  } catch(error) {
+    console.error("Light of the Sun globe:",error);
+    showGlobeError();
   }
 
-  resizeGlobe();
-
-  globe.pointOfView({lat:20,lng:10,altitude:2.3},0);
-  globe.controls().autoRotate = true;
-  globe.controls().autoRotateSpeed = 0.45;
-  globe.controls().enableZoom = true;
-
-  window.addEventListener("resize",resizeGlobe);
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded",initializeGlobe);
-} else {
+if(document.readyState === "loading"){
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeGlobe
+  );
+}else{
   initializeGlobe();
 }
+
 </script>
+
 </body>
 </html>
