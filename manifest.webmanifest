@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "Sunlight",
+  "short_name": "Sunlight",
+  "description": "Light of the Sun - International Charity Project. One Planet. Many Countries. One World of Kindness.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#081629",
+  "theme_color": "#081629",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
